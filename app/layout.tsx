@@ -16,13 +16,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
-                <AuthProvider>
-                    <NavMenu />
-                    {children}
-                </AuthProvider>
-            </body>
-        </html>
+        <AuthProvider>
+            <html lang="en">
+                <body className={inter.className}>
+                    <div className="container">
+                        <NavMenu />
+                        <main>{children}</main>
+                    </div>
+                </body>
+            </html>
+        </AuthProvider>
     );
 }
